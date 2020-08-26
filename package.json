@@ -25,7 +25,10 @@
     "build:dev": "rm -rf dist/ && NODE_ENV=development yarn build:client && NODE_ENV=development yarn build:server",
     "build:server": "webpack --env=server --progress --profile --colors",
     "build:client": "webpack --env=client --progress --profile --colors",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "build:tailwind": "tailwindcss build src/styles/tailwind.css -o src/styles/tailwind.output.css",
+    "prestart": "npm run build:tailwind",
+    "prebuild": "NODE_ENV=production npm run build:tailwind"
   },
   "dependencies": {
     "@loadable/component": "^5.12.0",
@@ -40,6 +43,7 @@
     "redux": "^4.0.5",
     "styled-components": "^5.0.0",
     "styled-normalize": "^8.0.6",
+    "tailwindcss": "^1.7.4",
     "typescript": "^3.7.5"
   },
   "devDependencies": {

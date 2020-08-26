@@ -13,7 +13,7 @@ const News = () => (
     <Helmet>
       <title>News</title>
     </Helmet>
-    <Title>News</Title>
+    <Title className='bg-gray-700'>News!!</Title>
   </div>
 );
 

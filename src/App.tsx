@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
+import './styles/tailwind.output.css';
 
 const Header = loadable(() => import(/* webpackChunkName: "Header" */ './components/Header'));
 const Footer = loadable(() => import(/* webpackChunkName: "Footer" */ './components/Footer'));
@@ -10,7 +11,7 @@ const News = loadable(() => import(/* webpackChunkName: "News" */ './pages/News'
 
 export default function App() {
   return (
-    <div>
+    <div className='bg-red-400'>
       <Helmet>
         <title>App</title>
       </Helmet>
